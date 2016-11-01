@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Symbol` enum in crate `mach_object`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Symbol">
+
+    <title>mach_object::Symbol - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>mach_object</a></p><script>window.sidebarCurrent = {name: 'Symbol', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>mach_object</a>::<wbr><a class='enum' href=''>Symbol</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-3403' class='srclink' href='../src/mach_object/src/symbol.rs.html#15-51' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Symbol&lt;'a&gt; {
+    Undefined {
+        name: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;,
+        external: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+        desc: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
+    },
+    Absolute {
+        name: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;,
+        external: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+        desc: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
+        entry: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+    },
+    Defined {
+        name: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;,
+        external: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+        section: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html' title='alloc::rc::Rc'>Rc</a>&lt;<a class='struct' href='../mach_object/struct.Section.html' title='mach_object::Section'>Section</a>&gt;&gt;,
+        desc: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
+        entry: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+    },
+    Prebound {
+        name: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;,
+        external: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+        desc: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
+    },
+    Indirect {
+        name: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;,
+        external: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a>,
+        desc: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
+        symbol: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;,
+    },
+    Debug {
+        name: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;,
+        section: <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html' title='alloc::rc::Rc'>Rc</a>&lt;<a class='struct' href='../mach_object/struct.Section.html' title='mach_object::Section'>Section</a>&gt;&gt;,
+        desc: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a>,
+        addr: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+    },
+}</pre><div class='docblock'><p>the link-edit 4.3BSD &quot;stab&quot; style symbol</p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.Undefined' class='variant'><code>Undefined</code></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Undefined.field.name'><code>name:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</code></td><td></td></tr><tr><td id='variant.Undefined.field.external'><code>external:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></td><td></td></tr><tr><td id='variant.Undefined.field.desc'><code>desc:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></td><td></td></tr></table><span id='variant.Absolute' class='variant'><code>Absolute</code></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Absolute.field.name'><code>name:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</code></td><td></td></tr><tr><td id='variant.Absolute.field.external'><code>external:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></td><td></td></tr><tr><td id='variant.Absolute.field.desc'><code>desc:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></td><td></td></tr><tr><td id='variant.Absolute.field.entry'><code>entry:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></td><td></td></tr></table><span id='variant.Defined' class='variant'><code>Defined</code></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Defined.field.name'><code>name:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</code></td><td></td></tr><tr><td id='variant.Defined.field.external'><code>external:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></td><td></td></tr><tr><td id='variant.Defined.field.section'><code>section:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html' title='alloc::rc::Rc'>Rc</a>&lt;<a class='struct' href='../mach_object/struct.Section.html' title='mach_object::Section'>Section</a>&gt;&gt;</code></td><td></td></tr><tr><td id='variant.Defined.field.desc'><code>desc:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></td><td></td></tr><tr><td id='variant.Defined.field.entry'><code>entry:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></td><td></td></tr></table><span id='variant.Prebound' class='variant'><code>Prebound</code></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Prebound.field.name'><code>name:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</code></td><td></td></tr><tr><td id='variant.Prebound.field.external'><code>external:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></td><td></td></tr><tr><td id='variant.Prebound.field.desc'><code>desc:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></td><td></td></tr></table><span id='variant.Indirect' class='variant'><code>Indirect</code></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Indirect.field.name'><code>name:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</code></td><td></td></tr><tr><td id='variant.Indirect.field.external'><code>external:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></td><td></td></tr><tr><td id='variant.Indirect.field.desc'><code>desc:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></td><td></td></tr><tr><td id='variant.Indirect.field.symbol'><code>symbol:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</code></td><td></td></tr></table><span id='variant.Debug' class='variant'><code>Debug</code></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Debug.field.name'><code>name:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</code></td><td></td></tr><tr><td id='variant.Debug.field.section'><code>section:&nbsp;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html' title='alloc::rc::Rc'>Rc</a>&lt;<a class='struct' href='../mach_object/struct.Section.html' title='mach_object::Section'>Section</a>&gt;&gt;</code></td><td></td></tr><tr><td id='variant.Debug.field.desc'><code>desc:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></td><td></td></tr><tr><td id='variant.Debug.field.addr'><code>addr:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></td><td></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='enum' href='../mach_object/enum.Symbol.html' title='mach_object::Symbol'>Symbol</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-3434' class='srclink' href='../src/mach_object/src/symbol.rs.html#53-75' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.name' class='method'><code>fn <a href='#method.name' class='fnname'>name</a>(&amp;self) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;&amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>&gt;</code></h4>
+<h4 id='method.is_external' class='method'><code>fn <a href='#method.is_external' class='fnname'>is_external</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../mach_object/enum.Symbol.html' title='mach_object::Symbol'>Symbol</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-3369' class='srclink' href='../src/mach_object/src/symbol.rs.html#14' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html' title='core::fmt::Display'>Display</a> for <a class='enum' href='../mach_object/enum.Symbol.html' title='mach_object::Symbol'>Symbol</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-3451' class='srclink' href='../src/mach_object/src/symbol.rs.html#77-143' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt-1' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class='trait' href='../mach_object/trait.SymbolReference.html' title='mach_object::SymbolReference'>SymbolReference</a> for <a class='enum' href='../mach_object/enum.Symbol.html' title='mach_object::Symbol'>Symbol</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a id='src-3525' class='srclink' href='../src/mach_object/src/symbol.rs.html#210-221' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.desc' class='method'><code>fn <a href='../mach_object/trait.SymbolReference.html#tymethod.desc' class='fnname'>desc</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u16.html'>u16</a></code></h4>
+<div class='docblock'><p>raw <code>desc</code> value</p>
+</div><h4 id='method.ref_type' class='method'><code>fn <a href='../mach_object/trait.SymbolReference.html#method.ref_type' class='fnname'>ref_type</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code></h4>
+<div class='docblock'><p>types of references</p>
+</div><h4 id='method.is_ref_dyn' class='method'><code>fn <a href='../mach_object/trait.SymbolReference.html#method.is_ref_dyn' class='fnname'>is_ref_dyn</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>To simplify stripping of objects that use are used with the dynamic link editor, the static link editor marks the symbols defined an object that are referenced by a dynamicly bound object (dynamic shared libraries, bundles). With this marking strip knows not to strip these symbols. <a href="../mach_object/trait.SymbolReference.html#method.is_ref_dyn">Read more</a></p>
+</div><h4 id='method.lib_ordinal' class='method'><code>fn <a href='../mach_object/trait.SymbolReference.html#method.lib_ordinal' class='fnname'>lib_ordinal</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a></code></h4>
+<div class='docblock'><p>The ordinal recorded references the libraries listed in the Mach-O file</p>
+</div><h4 id='method.is_no_dead_strip' class='method'><code>fn <a href='../mach_object/trait.SymbolReference.html#method.is_no_dead_strip' class='fnname'>is_no_dead_strip</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>symbol is not to be dead stripped</p>
+</div><h4 id='method.is_discarded' class='method'><code>fn <a href='../mach_object/trait.SymbolReference.html#method.is_discarded' class='fnname'>is_discarded</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>symbol is discarded</p>
+</div><h4 id='method.is_weak_ref' class='method'><code>fn <a href='../mach_object/trait.SymbolReference.html#method.is_weak_ref' class='fnname'>is_weak_ref</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>symbol is weak referenced</p>
+</div><h4 id='method.is_weak_def' class='method'><code>fn <a href='../mach_object/trait.SymbolReference.html#method.is_weak_def' class='fnname'>is_weak_def</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>coalesed symbol is a weak definition</p>
+</div><h4 id='method.is_ref_to_weak' class='method'><code>fn <a href='../mach_object/trait.SymbolReference.html#method.is_ref_to_weak' class='fnname'>is_ref_to_weak</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>reference to a weak symbol</p>
+</div><h4 id='method.is_arm_thumb_def' class='method'><code>fn <a href='../mach_object/trait.SymbolReference.html#method.is_arm_thumb_def' class='fnname'>is_arm_thumb_def</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>symbol is a Thumb function (ARM)</p>
+</div><h4 id='method.is_resolver' class='method'><code>fn <a href='../mach_object/trait.SymbolReference.html#method.is_resolver' class='fnname'>is_resolver</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>the function is actually a resolver function and should be called to get the address of the real function to use. <a href="../mach_object/trait.SymbolReference.html#method.is_resolver">Read more</a></p>
+</div><h4 id='method.is_alt_entry' class='method'><code>fn <a href='../mach_object/trait.SymbolReference.html#method.is_alt_entry' class='fnname'>is_alt_entry</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<div class='docblock'><p>symbol is pinned to the previous content.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "mach_object";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

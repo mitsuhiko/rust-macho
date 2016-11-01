@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `LoadCommand` enum in crate `mach_object`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, LoadCommand">
+
+    <title>mach_object::LoadCommand - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>mach_object</a></p><script>window.sidebarCurrent = {name: 'LoadCommand', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content enum">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>mach_object</a>::<wbr><a class='enum' href=''>LoadCommand</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a id='src-1676' class='srclink' href='../src/mach_object/src/commands.rs.html#235-684' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum LoadCommand {
+    Segment {
+        segname: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+        vmaddr: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+        vmsize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+        fileoff: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+        filesize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+        maxprot: <a class='type' href='../mach_object/type.vm_prot_t.html' title='mach_object::vm_prot_t'>vm_prot_t</a>,
+        initprot: <a class='type' href='../mach_object/type.vm_prot_t.html' title='mach_object::vm_prot_t'>vm_prot_t</a>,
+        flags: <a class='struct' href='../mach_object/struct.SegmentFlags.html' title='mach_object::SegmentFlags'>SegmentFlags</a>,
+        sections: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html' title='alloc::rc::Rc'>Rc</a>&lt;<a class='struct' href='../mach_object/struct.Section.html' title='mach_object::Section'>Section</a>&gt;&gt;,
+    },
+    Segment64 {
+        segname: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>,
+        vmaddr: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+        vmsize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+        fileoff: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+        filesize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>,
+        maxprot: <a class='type' href='../mach_object/type.vm_prot_t.html' title='mach_object::vm_prot_t'>vm_prot_t</a>,
+        initprot: <a class='type' href='../mach_object/type.vm_prot_t.html' title='mach_object::vm_prot_t'>vm_prot_t</a>,
+        flags: <a class='struct' href='../mach_object/struct.SegmentFlags.html' title='mach_object::SegmentFlags'>SegmentFlags</a>,
+        sections: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html' title='alloc::rc::Rc'>Rc</a>&lt;<a class='struct' href='../mach_object/struct.Section.html' title='mach_object::Section'>Section</a>&gt;&gt;,
+    },
+    IdFvmLib(<a class='struct' href='../mach_object/struct.FvmLib.html' title='mach_object::FvmLib'>FvmLib</a>),
+    LoadFvmLib(<a class='struct' href='../mach_object/struct.FvmLib.html' title='mach_object::FvmLib'>FvmLib</a>),
+    IdDyLib(<a class='struct' href='../mach_object/struct.DyLib.html' title='mach_object::DyLib'>DyLib</a>),
+    LoadDyLib(<a class='struct' href='../mach_object/struct.DyLib.html' title='mach_object::DyLib'>DyLib</a>),
+    LoadWeakDyLib(<a class='struct' href='../mach_object/struct.DyLib.html' title='mach_object::DyLib'>DyLib</a>),
+    ReexportDyLib(<a class='struct' href='../mach_object/struct.DyLib.html' title='mach_object::DyLib'>DyLib</a>),
+    LoadUpwardDylib(<a class='struct' href='../mach_object/struct.DyLib.html' title='mach_object::DyLib'>DyLib</a>),
+    LazyLoadDylib(<a class='struct' href='../mach_object/struct.DyLib.html' title='mach_object::DyLib'>DyLib</a>),
+    IdDyLinker(<a class='struct' href='../mach_object/struct.LcString.html' title='mach_object::LcString'>LcString</a>),
+    LoadDyLinker(<a class='struct' href='../mach_object/struct.LcString.html' title='mach_object::LcString'>LcString</a>),
+    DyLdEnv(<a class='struct' href='../mach_object/struct.LcString.html' title='mach_object::LcString'>LcString</a>),
+    SymTab {
+        symoff: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        nsyms: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        stroff: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        strsize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    },
+    DySymTab {
+        ilocalsym: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        nlocalsym: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        iextdefsym: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        nextdefsym: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        iundefsym: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        nundefsym: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        tocoff: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        ntoc: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        modtaboff: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        nmodtab: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        extrefsymoff: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        nextrefsyms: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        indirectsymoff: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        nindirectsyms: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        extreloff: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        nextrel: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        locreloff: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        nlocrel: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    },
+    Uuid(<a class='struct' href='https://doc.rust-lang.org/uuid/uuid/struct.Uuid.html' title='uuid::Uuid'>Uuid</a>),
+    CodeSignature(<a class='struct' href='../mach_object/struct.LinkEditData.html' title='mach_object::LinkEditData'>LinkEditData</a>),
+    SegmentSplitInfo(<a class='struct' href='../mach_object/struct.LinkEditData.html' title='mach_object::LinkEditData'>LinkEditData</a>),
+    FunctionStarts(<a class='struct' href='../mach_object/struct.LinkEditData.html' title='mach_object::LinkEditData'>LinkEditData</a>),
+    DataInCode(<a class='struct' href='../mach_object/struct.LinkEditData.html' title='mach_object::LinkEditData'>LinkEditData</a>),
+    DylibCodeSignDrs(<a class='struct' href='../mach_object/struct.LinkEditData.html' title='mach_object::LinkEditData'>LinkEditData</a>),
+    LinkerOptimizationHint(<a class='struct' href='../mach_object/struct.LinkEditData.html' title='mach_object::LinkEditData'>LinkEditData</a>),
+    VersionMin {
+        target: <a class='enum' href='../mach_object/enum.BuildTarget.html' title='mach_object::BuildTarget'>BuildTarget</a>,
+        version: <a class='struct' href='../mach_object/struct.VersionTag.html' title='mach_object::VersionTag'>VersionTag</a>,
+        sdk: <a class='struct' href='../mach_object/struct.VersionTag.html' title='mach_object::VersionTag'>VersionTag</a>,
+    },
+    DyldInfo {
+        rebase_off: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        rebase_size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        bind_off: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        bind_size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        weak_bind_off: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        weak_bind_size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        lazy_bind_off: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        lazy_bind_size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        export_off: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        export_size: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+    },
+    EntryPoint {
+        entryoff: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a>,
+        stacksize: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a>,
+    },
+    SourceVersion(<a class='struct' href='../mach_object/struct.SourceVersionTag.html' title='mach_object::SourceVersionTag'>SourceVersionTag</a>),
+    Command {
+        cmd: <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a>,
+        payload: <a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt;,
+    },
+}</pre><div class='docblock'><p>The load commands directly follow the mach_header.</p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.Segment' class='variant'><code>Segment</code></span><div class='docblock'><p>The segment load command indicates that a part of this file is to be
+mapped into the task&#39;s address space.</p>
+
+<p>The size of this segment in memory, vmsize, maybe equal to or
+larger than the amount to map from this file, filesize.
+The file is mapped starting at fileoff to the beginning of
+the segment in memory, vmaddr.  The rest of the memory of the segment,
+if any, is allocated zero fill on demand.  The segment&#39;s maximum virtual
+memory protection and initial virtual memory protection are specified
+by the maxprot and initprot fields.  If the segment has sections then the
+section structures directly follow the segment command and their size is
+reflected in cmdsize.</p>
+</div><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Segment.field.segname'><code>segname:&nbsp;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></td><td><div class='docblock'><p>segment name</p>
+</div></td></tr><tr><td id='variant.Segment.field.vmaddr'><code>vmaddr:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></td><td><div class='docblock'><p>memory address of this segment</p>
+</div></td></tr><tr><td id='variant.Segment.field.vmsize'><code>vmsize:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></td><td><div class='docblock'><p>memory size of this segment</p>
+</div></td></tr><tr><td id='variant.Segment.field.fileoff'><code>fileoff:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></td><td><div class='docblock'><p>file offset of this segment</p>
+</div></td></tr><tr><td id='variant.Segment.field.filesize'><code>filesize:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></td><td><div class='docblock'><p>amount to map from the file</p>
+</div></td></tr><tr><td id='variant.Segment.field.maxprot'><code>maxprot:&nbsp;<a class='type' href='../mach_object/type.vm_prot_t.html' title='mach_object::vm_prot_t'>vm_prot_t</a></code></td><td><div class='docblock'><p>maximum VM protection</p>
+</div></td></tr><tr><td id='variant.Segment.field.initprot'><code>initprot:&nbsp;<a class='type' href='../mach_object/type.vm_prot_t.html' title='mach_object::vm_prot_t'>vm_prot_t</a></code></td><td><div class='docblock'><p>initial VM protection</p>
+</div></td></tr><tr><td id='variant.Segment.field.flags'><code>flags:&nbsp;<a class='struct' href='../mach_object/struct.SegmentFlags.html' title='mach_object::SegmentFlags'>SegmentFlags</a></code></td><td><div class='docblock'><p>flags</p>
+</div></td></tr><tr><td id='variant.Segment.field.sections'><code>sections:&nbsp;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html' title='alloc::rc::Rc'>Rc</a>&lt;<a class='struct' href='../mach_object/struct.Section.html' title='mach_object::Section'>Section</a>&gt;&gt;</code></td><td><div class='docblock'><p>sections</p>
+</div></td></tr></table><span id='variant.Segment64' class='variant'><code>Segment64</code></span><div class='docblock'><p>The 64-bit segment load command indicates that a part of this file is to be
+mapped into a 64-bit task&#39;s address space.</p>
+
+<p>If the 64-bit segment has sections then section_64 structures directly follow
+the 64-bit segment command and their size is reflected in cmdsize.</p>
+</div><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Segment64.field.segname'><code>segname:&nbsp;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></td><td><div class='docblock'><p>segment name</p>
+</div></td></tr><tr><td id='variant.Segment64.field.vmaddr'><code>vmaddr:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></td><td><div class='docblock'><p>memory address of this segment</p>
+</div></td></tr><tr><td id='variant.Segment64.field.vmsize'><code>vmsize:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></td><td><div class='docblock'><p>memory size of this segment</p>
+</div></td></tr><tr><td id='variant.Segment64.field.fileoff'><code>fileoff:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></td><td><div class='docblock'><p>file offset of this segment</p>
+</div></td></tr><tr><td id='variant.Segment64.field.filesize'><code>filesize:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a></code></td><td><div class='docblock'><p>amount to map from the file</p>
+</div></td></tr><tr><td id='variant.Segment64.field.maxprot'><code>maxprot:&nbsp;<a class='type' href='../mach_object/type.vm_prot_t.html' title='mach_object::vm_prot_t'>vm_prot_t</a></code></td><td><div class='docblock'><p>maximum VM protection</p>
+</div></td></tr><tr><td id='variant.Segment64.field.initprot'><code>initprot:&nbsp;<a class='type' href='../mach_object/type.vm_prot_t.html' title='mach_object::vm_prot_t'>vm_prot_t</a></code></td><td><div class='docblock'><p>initial VM protection</p>
+</div></td></tr><tr><td id='variant.Segment64.field.flags'><code>flags:&nbsp;<a class='struct' href='../mach_object/struct.SegmentFlags.html' title='mach_object::SegmentFlags'>SegmentFlags</a></code></td><td><div class='docblock'><p>flags</p>
+</div></td></tr><tr><td id='variant.Segment64.field.sections'><code>sections:&nbsp;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='struct' href='https://doc.rust-lang.org/nightly/alloc/rc/struct.Rc.html' title='alloc::rc::Rc'>Rc</a>&lt;<a class='struct' href='../mach_object/struct.Section.html' title='mach_object::Section'>Section</a>&gt;&gt;</code></td><td><div class='docblock'><p>sections</p>
+</div></td></tr></table><span id='variant.IdFvmLib' class='variant'><code>IdFvmLib(<a class='struct' href='../mach_object/struct.FvmLib.html' title='mach_object::FvmLib'>FvmLib</a>)</code></span><div class='docblock'><p>fixed VM shared library identification</p>
+</div><span id='variant.LoadFvmLib' class='variant'><code>LoadFvmLib(<a class='struct' href='../mach_object/struct.FvmLib.html' title='mach_object::FvmLib'>FvmLib</a>)</code></span><div class='docblock'><p>load a specified fixed VM shared library</p>
+</div><span id='variant.IdDyLib' class='variant'><code>IdDyLib(<a class='struct' href='../mach_object/struct.DyLib.html' title='mach_object::DyLib'>DyLib</a>)</code></span><div class='docblock'><p>dynamically linked shared lib ident</p>
+</div><span id='variant.LoadDyLib' class='variant'><code>LoadDyLib(<a class='struct' href='../mach_object/struct.DyLib.html' title='mach_object::DyLib'>DyLib</a>)</code></span><div class='docblock'><p>load a dynamically linked shared library</p>
+</div><span id='variant.LoadWeakDyLib' class='variant'><code>LoadWeakDyLib(<a class='struct' href='../mach_object/struct.DyLib.html' title='mach_object::DyLib'>DyLib</a>)</code></span><div class='docblock'><p>load a dynamically linked shared library
+that is allowed to be missing (all symbols are weak imported).</p>
+</div><span id='variant.ReexportDyLib' class='variant'><code>ReexportDyLib(<a class='struct' href='../mach_object/struct.DyLib.html' title='mach_object::DyLib'>DyLib</a>)</code></span><div class='docblock'><p>load and re-export dylib</p>
+</div><span id='variant.LoadUpwardDylib' class='variant'><code>LoadUpwardDylib(<a class='struct' href='../mach_object/struct.DyLib.html' title='mach_object::DyLib'>DyLib</a>)</code></span><div class='docblock'><p>load upward dylib</p>
+</div><span id='variant.LazyLoadDylib' class='variant'><code>LazyLoadDylib(<a class='struct' href='../mach_object/struct.DyLib.html' title='mach_object::DyLib'>DyLib</a>)</code></span><div class='docblock'><p>delay load of dylib until first use</p>
+</div><span id='variant.IdDyLinker' class='variant'><code>IdDyLinker(<a class='struct' href='../mach_object/struct.LcString.html' title='mach_object::LcString'>LcString</a>)</code></span><div class='docblock'><p>dynamic linker identification</p>
+</div><span id='variant.LoadDyLinker' class='variant'><code>LoadDyLinker(<a class='struct' href='../mach_object/struct.LcString.html' title='mach_object::LcString'>LcString</a>)</code></span><div class='docblock'><p>load a dynamic linker</p>
+</div><span id='variant.DyLdEnv' class='variant'><code>DyLdEnv(<a class='struct' href='../mach_object/struct.LcString.html' title='mach_object::LcString'>LcString</a>)</code></span><div class='docblock'><p>string for dyld to treat like environment variable</p>
+</div><span id='variant.SymTab' class='variant'><code>SymTab</code></span><div class='docblock'><p>The symtab_command contains the offsets and sizes of the link-edit 4.3BSD
+&quot;stab&quot; style symbol table information as described in the header files
+<nlist.h> and <stab.h>.</p>
+</div><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.SymTab.field.symoff'><code>symoff:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>symbol table offset</p>
+</div></td></tr><tr><td id='variant.SymTab.field.nsyms'><code>nsyms:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>number of symbol table entries</p>
+</div></td></tr><tr><td id='variant.SymTab.field.stroff'><code>stroff:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>string table offset</p>
+</div></td></tr><tr><td id='variant.SymTab.field.strsize'><code>strsize:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>string table size in bytes</p>
+</div></td></tr></table><span id='variant.DySymTab' class='variant'><code>DySymTab</code></span><div class='docblock'><p>This is the second set of the symbolic information which is used to support
+the data structures for the dynamically link editor.</p>
+
+<p>The original set of symbolic information in the symtab_command which contains
+the symbol and string tables must also be present when this load command is
+present.  When this load command is present the symbol table is organized
+into three groups of symbols:
+ local symbols (static and debugging symbols) - grouped by module
+ defined external symbols - grouped by module (sorted by name if not lib)
+ undefined external symbols (sorted by name if MH_BINDATLOAD is not set,
+                     and in order the were seen by the static
+                 linker if MH_BINDATLOAD is set)
+In this load command there are offsets and counts to each of the three groups
+of symbols.</p>
+
+<p>This load command contains a the offsets and sizes of the following new
+symbolic information tables:
+ table of contents
+ module table
+ reference symbol table
+ indirect symbol table
+The first three tables above (the table of contents, module table and
+reference symbol table) are only present if the file is a dynamically linked
+shared library.  For executable and object modules, which are files
+containing only one module, the information that would be in these three
+tables is determined as follows:
+ table of contents - the defined external symbols are sorted by name
+ module table - the file contains only one module so everything in the
+            file is part of the module.
+ reference symbol table - is the defined and undefined external symbols</p>
+
+<p>For dynamically linked shared library files this load command also contains
+offsets and sizes to the pool of relocation entries for all sections
+separated into two groups:
+ external relocation entries
+ local relocation entries
+For executable and object modules the relocation entries continue to hang
+off the section structures.</p>
+</div><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.DySymTab.field.ilocalsym'><code>ilocalsym:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>index to local symbols</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.nlocalsym'><code>nlocalsym:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>number of local symbols</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.iextdefsym'><code>iextdefsym:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>index to externally defined symbols</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.nextdefsym'><code>nextdefsym:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>number of externally defined symbols</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.iundefsym'><code>iundefsym:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>index to undefined symbols</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.nundefsym'><code>nundefsym:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>number of undefined symbols</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.tocoff'><code>tocoff:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>file offset to table of contents</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.ntoc'><code>ntoc:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>number of entries in table of contents</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.modtaboff'><code>modtaboff:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>file offset to module table</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.nmodtab'><code>nmodtab:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>number of module table entries</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.extrefsymoff'><code>extrefsymoff:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>offset to referenced symbol table</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.nextrefsyms'><code>nextrefsyms:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>number of referenced symbol table entries</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.indirectsymoff'><code>indirectsymoff:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>file offset to the indirect symbol table</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.nindirectsyms'><code>nindirectsyms:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>number of indirect symbol table entries</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.extreloff'><code>extreloff:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>offset to external relocation entries</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.nextrel'><code>nextrel:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>number of external relocation entries</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.locreloff'><code>locreloff:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>offset to local relocation entries</p>
+</div></td></tr><tr><td id='variant.DySymTab.field.nlocrel'><code>nlocrel:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>number of local relocation entries</p>
+</div></td></tr></table><span id='variant.Uuid' class='variant'><code>Uuid(<a class='struct' href='https://doc.rust-lang.org/uuid/uuid/struct.Uuid.html' title='uuid::Uuid'>Uuid</a>)</code></span><div class='docblock'><p>The uuid load command contains a single 128-bit unique random number that
+identifies an object produced by the static link editor.</p>
+</div><span id='variant.CodeSignature' class='variant'><code>CodeSignature(<a class='struct' href='../mach_object/struct.LinkEditData.html' title='mach_object::LinkEditData'>LinkEditData</a>)</code></span><div class='docblock'><p>local of code signature</p>
+</div><span id='variant.SegmentSplitInfo' class='variant'><code>SegmentSplitInfo(<a class='struct' href='../mach_object/struct.LinkEditData.html' title='mach_object::LinkEditData'>LinkEditData</a>)</code></span><div class='docblock'><p>local of info to split segments</p>
+</div><span id='variant.FunctionStarts' class='variant'><code>FunctionStarts(<a class='struct' href='../mach_object/struct.LinkEditData.html' title='mach_object::LinkEditData'>LinkEditData</a>)</code></span><div class='docblock'><p>compressed table of function start addresses</p>
+</div><span id='variant.DataInCode' class='variant'><code>DataInCode(<a class='struct' href='../mach_object/struct.LinkEditData.html' title='mach_object::LinkEditData'>LinkEditData</a>)</code></span><div class='docblock'><p>table of non-instructions in __text</p>
+</div><span id='variant.DylibCodeSignDrs' class='variant'><code>DylibCodeSignDrs(<a class='struct' href='../mach_object/struct.LinkEditData.html' title='mach_object::LinkEditData'>LinkEditData</a>)</code></span><div class='docblock'><p>Code signing DRs copied from linked dylibs</p>
+</div><span id='variant.LinkerOptimizationHint' class='variant'><code>LinkerOptimizationHint(<a class='struct' href='../mach_object/struct.LinkEditData.html' title='mach_object::LinkEditData'>LinkEditData</a>)</code></span><div class='docblock'><p>optimization hints in MH_OBJECT files</p>
+</div><span id='variant.VersionMin' class='variant'><code>VersionMin</code></span><div class='docblock'><p>The version_min_command contains the min OS version on which this
+binary was built to run.</p>
+</div><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.VersionMin.field.target'><code>target:&nbsp;<a class='enum' href='../mach_object/enum.BuildTarget.html' title='mach_object::BuildTarget'>BuildTarget</a></code></td><td></td></tr><tr><td id='variant.VersionMin.field.version'><code>version:&nbsp;<a class='struct' href='../mach_object/struct.VersionTag.html' title='mach_object::VersionTag'>VersionTag</a></code></td><td></td></tr><tr><td id='variant.VersionMin.field.sdk'><code>sdk:&nbsp;<a class='struct' href='../mach_object/struct.VersionTag.html' title='mach_object::VersionTag'>VersionTag</a></code></td><td></td></tr></table><span id='variant.DyldInfo' class='variant'><code>DyldInfo</code></span><div class='docblock'><p>The dyld_info_command contains the file offsets and sizes of
+the new compressed form of the information dyld needs to
+load the image.  This information is used by dyld on Mac OS X
+10.6 and later.  All information pointed to by this command
+is encoded using byte streams, so no endian swapping is needed
+to interpret it.</p>
+</div><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.DyldInfo.field.rebase_off'><code>rebase_off:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>file offset to rebase info</p>
+</div></td></tr><tr><td id='variant.DyldInfo.field.rebase_size'><code>rebase_size:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>size of rebase info</p>
+</div></td></tr><tr><td id='variant.DyldInfo.field.bind_off'><code>bind_off:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>file offset to binding info</p>
+</div></td></tr><tr><td id='variant.DyldInfo.field.bind_size'><code>bind_size:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>size of binding info</p>
+</div></td></tr><tr><td id='variant.DyldInfo.field.weak_bind_off'><code>weak_bind_off:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>file offset to weak binding info</p>
+</div></td></tr><tr><td id='variant.DyldInfo.field.weak_bind_size'><code>weak_bind_size:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>size of weak binding info</p>
+</div></td></tr><tr><td id='variant.DyldInfo.field.lazy_bind_off'><code>lazy_bind_off:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>file offset to lazy binding info</p>
+</div></td></tr><tr><td id='variant.DyldInfo.field.lazy_bind_size'><code>lazy_bind_size:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>size of lazy binding infs</p>
+</div></td></tr><tr><td id='variant.DyldInfo.field.export_off'><code>export_off:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>file offset to lazy binding info</p>
+</div></td></tr><tr><td id='variant.DyldInfo.field.export_size'><code>export_size:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>size of lazy binding infs</p>
+</div></td></tr></table><span id='variant.EntryPoint' class='variant'><code>EntryPoint</code></span><div class='docblock'><p>The entry_point_command is a replacement for thread_command.
+It is used for main executables to specify the location (file offset)
+of main().  If -stack_size was used at link time, the stacksize
+field will contain the stack size need for the main thread.</p>
+</div><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.EntryPoint.field.entryoff'><code>entryoff:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a></code></td><td><div class='docblock'><p>file (__TEXT) offset of main()</p>
+</div></td></tr><tr><td id='variant.EntryPoint.field.stacksize'><code>stacksize:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u64.html'>u64</a></code></td><td><div class='docblock'><p>if not zero, initial stack size</p>
+</div></td></tr></table><span id='variant.SourceVersion' class='variant'><code>SourceVersion(<a class='struct' href='../mach_object/struct.SourceVersionTag.html' title='mach_object::SourceVersionTag'>SourceVersionTag</a>)</code></span><div class='docblock'><p>The source_version_command is an optional load command containing
+the version of the sources used to build the binary.</p>
+</div><span id='variant.Command' class='variant'><code>Command</code></span><h3 class='fields'>Fields</h3>
+
+                           <table><tr><td id='variant.Command.field.cmd'><code>cmd:&nbsp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></td><td><div class='docblock'><p>type of load command</p>
+</div></td></tr><tr><td id='variant.Command.field.payload'><code>payload:&nbsp;<a class='struct' href='https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html' title='collections::vec::Vec'>Vec</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a>&gt;</code></td><td><div class='docblock'><p>command in bytes</p>
+</div></td></tr></table><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class='enum' href='../mach_object/enum.LoadCommand.html' title='mach_object::LoadCommand'>LoadCommand</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1791' class='srclink' href='../src/mach_object/src/commands.rs.html#703-1038' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.parse' class='method'><code>fn <a href='#method.parse' class='fnname'>parse</a>&lt;O:&nbsp;<a class='trait' href='http://burntsushi.net/rustdoc/byteorder/byteorder/trait.ByteOrder.html' title='byteorder::ByteOrder'>ByteOrder</a>&gt;(buf: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/std/io/cursor/struct.Cursor.html' title='std::io::cursor::Cursor'>Cursor</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>&amp;[</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u8.html'>u8</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.slice.html'>]</a>&gt;) -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>(</a><a class='enum' href='../mach_object/enum.LoadCommand.html' title='mach_object::LoadCommand'>LoadCommand</a>, <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a><a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.tuple.html'>)</a>,&nbsp;<a class='enum' href='../mach_object/enum.Error.html' title='mach_object::Error'>Error</a>&gt;</code></h4>
+<h4 id='method.cmd' class='method'><code>fn <a href='#method.cmd' class='fnname'>cmd</a>(&amp;self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.u32.html'>u32</a></code></h4>
+<h4 id='method.name' class='method'><code>fn <a href='#method.name' class='fnname'>name</a>(&amp;self) -&gt; &amp;'static <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a></code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html' title='core::clone::Clone'>Clone</a> for <a class='enum' href='../mach_object/enum.LoadCommand.html' title='mach_object::LoadCommand'>LoadCommand</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1490' class='srclink' href='../src/mach_object/src/commands.rs.html#234' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class='enum' href='../mach_object/enum.LoadCommand.html' title='mach_object::LoadCommand'>LoadCommand</a></code></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: &amp;Self)</code><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html' title='core::fmt::Debug'>Debug</a> for <a class='enum' href='../mach_object/enum.LoadCommand.html' title='mach_object::LoadCommand'>LoadCommand</a></code></span><span class='out-of-band'><div class='ghost'></div><a id='src-1569' class='srclink' href='../src/mach_object/src/commands.rs.html#234' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class='struct' href='https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html' title='core::fmt::Formatter'>Formatter</a>) -&gt; <a class='type' href='https://doc.rust-lang.org/nightly/core/fmt/type.Result.html' title='core::fmt::Result'>Result</a></code></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "mach_object";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

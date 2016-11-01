@@ -1,5 +1,5 @@
 (function() {var implementors = {};
-implementors["macho"] = ["impl <a class='trait' href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html' title='std::error::Error'>Error</a> for <a class='enum' href='macho/enum.Error.html' title='macho::Error'>Error</a>",];
+implementors["mach_object"] = ["impl <a class='trait' href='https://doc.rust-lang.org/nightly/std/error/trait.Error.html' title='std::error::Error'>Error</a> for <a class='enum' href='mach_object/enum.Error.html' title='mach_object::Error'>Error</a>",];
 
             if (window.register_implementors) {
                 window.register_implementors(implementors);
