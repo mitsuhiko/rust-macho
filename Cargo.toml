@@ -14,7 +14,7 @@ display = []
 integration_tests = []
 
 [dependencies]
-log = "0.4"
+log = "0.3"
 libc = "0.2"
 byteorder = "1.0"
 failure = "0.1"
