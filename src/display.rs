@@ -458,7 +458,7 @@ impl MachCommand {
                 writeln!(f, " platform {:?}", version.platform())?;
                 writeln!(f, "    minos {}", version.minos)?;
                 writeln!(f, "      sdk {}", version.sdk)?;
-                writeln!(f, "    tools");
+                writeln!(f, "    tools")?;
 
                 for tool in &version.build_tools {
                     writeln!(f, "          {:?} {}", tool.tool(), tool.version)?;
